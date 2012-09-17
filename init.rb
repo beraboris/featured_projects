@@ -2,8 +2,8 @@
 require 'redmine'
 require 'dispatcher'
 
-Dispatcher.to_prepare :featured_projects do
 
+ActionDispatch::Callbacks.to_prepare do
   require_dependency 'featured_projects/hooks'
 
   require_dependency 'project'

@@ -14,9 +14,9 @@ module FeaturedProjects
           safe_attributes 'is_featured',
             :if => lambda {|project, user| user.allowed_to?(:update_featured_project_flags, nil, :global => true) }
 
-          named_scope :featured, {:conditions => {:is_featured => true}}
+          scope :featured, {:conditions => {:is_featured => true}}
         
-          named_scope :not_featured, { :conditions => ["#{Project.table_name}.is_featured <> :true", {:true => true}] }
+          scope :not_featured, { :conditions => ["#{Project.table_name}.is_featured <> :true", {:true => true}] }
         end
 
       end
