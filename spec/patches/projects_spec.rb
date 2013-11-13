@@ -6,6 +6,22 @@ describe Project do
   it { should respond_to :is_featured }
   it { should respond_to :is_featured= }
 
+  context 'current user is an admin' do
+    before { User.stub(:current) { FactoryGirl.create :admin } }
+
+    it 'should have is_featured as a safe attribute' do
+      subject.safe_attribute_names(User.current).should include 'is_featured'
+    end
+  end
+
+  context 'current user is not an admin' do
+    before { User.stub(:current) { FactoryGirl.create :not_admin } }
+
+    it 'should have is_featured as a safe attribute' do
+      subject.safe_attribute_names(User.current).should_not include 'is_featured'
+    end
+  end
+
   describe 'class' do
     subject { Project }
 
