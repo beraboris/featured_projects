@@ -1,7 +1,4 @@
-# Redmine sample plugin
 require 'redmine'
-require 'dispatcher'
-
 
 ActionDispatch::Callbacks.to_prepare do
   require_dependency 'featured_projects/hooks'
@@ -13,7 +10,6 @@ ActionDispatch::Callbacks.to_prepare do
   unless WelcomeController.included_modules.include? FeaturedProjects::Patches::WelcomeControllerPatch
     WelcomeController.send(:include, FeaturedProjects::Patches::WelcomeControllerPatch)
   end
-
 end
 
 Redmine::Plugin.register :featured_projects do
