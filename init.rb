@@ -5,11 +5,6 @@ ActionDispatch::Callbacks.to_prepare do
 
   require_dependency 'project'
   Project.send(:include, FeaturedProjects::Patches::ProjectPatch)
-
-  require_dependency 'welcome_controller'
-  unless WelcomeController.included_modules.include? FeaturedProjects::Patches::WelcomeControllerPatch
-    WelcomeController.send(:include, FeaturedProjects::Patches::WelcomeControllerPatch)
-  end
 end
 
 Redmine::Plugin.register :featured_projects do
