@@ -1,27 +1,27 @@
 == Redmine/Chiliproject Featured Projects Plugin
 
-This plugin allows the redmine/chiliproject administrator to mark any project he wants as "featured" (notice that this is an "admin" right, not a project administrator right).
+This plugin allows the redmine/chiliproject administrator to mark any project he wants as _featured_ (notice that this is an _admin_ right, not a project administrator right).
 
-It also changes the redmine home page to show a "featured projects" box. This box replaces the default "Latest projects" box.
+It adds a block to the home page that shows <i>featured projects</i>.
 
-Finally, it adds two named scopes to Project: Project.featured and Project.not_featured
+Finally, it adds two named scopes to Project: +Project.featured+ and +Project.not_featured+
 
-This plugin can be used in consonance with our Redmine Project Filtering plugin ( https://github.com/splendeo/redmine_project_filtering )
+In the past, this plugin could be used with the {redmine_project_filtering}[https://github.com/splendeo/redmine_project_filtering]
+plugin. This is not supported as of now.
 
 == Installation
 
-1. Copy the plugin directory into the vendor/plugins directory
+1. Copy the plugin directory into the +plugins/+ directory
 
 2. Migrate plugin:
-   rake db:migrate_plugins
+
+    rake redmine:plugins:migrate
 
 3. Start Redmine
 
-Installed plugins are listed and can be configured from 'Admin -> Plugins' screen.
-
 == Credits
 
-Boris Bera ({bberawk}[https://github.com/bberawk]/{beraboris}[https://github.com/beraboris])
+Boris Bera ({bberawk}[https://github.com/bberawk] / {beraboris}[https://github.com/beraboris])
 made the project work with redmine 2.3.x and changed some of the core features
 
 {renemilk}[https://github.com/renemilk] ported the project to rails 3 and 
