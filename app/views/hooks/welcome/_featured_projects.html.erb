@@ -1,0 +1,13 @@
+<% if featured_projects.any? %>
+<div class="projects box">
+<h3><%=l(:label_project_featured)%></h3>
+  <ul>
+  <% featured_projects.each do |project| %>
+    <li>
+    <%= link_to_project project %> (<%= format_time(project.created_on) %>)
+    <%= textilizable project.short_description, :project => project %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
