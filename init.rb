@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'redmine'
 
 ActionDispatch::Callbacks.to_prepare do
