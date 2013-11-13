@@ -21,4 +21,12 @@ Installed plugins are listed and can be configured from 'Admin -> Plugins' scree
 
 == Credits
 
-Development of this plugin was financed by the Open Hardware Repository - www.ohwr.org
+Boris Bera ({bberawk}[https://github.com/bberawk]/{beraboris}[https://github.com/beraboris])
+made the project work with redmine 2.3.x and changed some of the core features
+
+{renemilk}[https://github.com/renemilk] ported the project to rails 3 and 
+redmine 2.x
+
+The original project was developped by {splendo}[https://github.com/splendeo] 
+and was financed by the Open Hardware Repository - www.ohwr.org
+
